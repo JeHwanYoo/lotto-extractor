@@ -1,0 +1,3 @@
+[submodule "src/store/lotto-crawler"]
+	path = src/store/lotto-crawler
+	url = https://github.com/JeHwanYoo/lotto-crawler.git
