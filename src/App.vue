@@ -1,14 +1,17 @@
 <template>
   <v-app>
     <v-main>
-      <div>Hello</div>
+      <lotto />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import Lotto from '@/components/Lotto.vue'
 
-@Component({})
+@Component({
+  components: { Lotto },
+})
 export default class App extends Vue {}
 </script>

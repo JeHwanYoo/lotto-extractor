@@ -36,6 +36,8 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/store/lotto-crawler",
+    "src/components/v-minusplusinput"
   ]
 }
