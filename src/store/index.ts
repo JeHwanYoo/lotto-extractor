@@ -29,6 +29,7 @@ export default new Vuex.Store({
   state: {
     lottos,
     option,
+    extracted: [] as number[][],
   },
   getters: {
     lottos(state): LottoData[] {
@@ -36,6 +37,9 @@ export default new Vuex.Store({
     },
     option(state): LottoOption {
       return state.option
+    },
+    extracted(state): number[][] {
+      return state.extracted
     },
   },
   mutations: {
@@ -56,6 +60,11 @@ export default new Vuex.Store({
     changeHistory(state, payload: boolean) {
       state.option.history = payload
     },
+    clearExtacted(state) {
+      state.extracted = []
+    },
+    pushExtracted(state, payload: number[]) {
+      state.extracted.push(payload)
+    },
   },
-  actions: {},
 })

@@ -34,16 +34,14 @@
       <v-row>
         <v-col class="pa-0 px-2">
           <v-switch
-            v-bind="attrs"
-            v-on="on"
-            label="역대 당첨 번호 제외"
+            label="역대 당첨 번호 제외 (1~965회차)"
             v-model="history"
             hide-details
           ></v-switch>
         </v-col>
       </v-row>
       <v-row>
-        <v-col class="text-right">
+        <v-col class="text-left">
           <span class="text-caption">
             ※ 로또는 독립 시행 게임이므로 이전 결과가 다음 결과에 영향을 미치지
             않습니다.
