@@ -9,6 +9,7 @@
           :type="type"
           v-model="data"
           hide-details
+          :disabled="disabled"
         ></v-text-field>
       </v-col>
     </v-row>
@@ -23,6 +24,7 @@ export default class LottoOptionField extends Vue {
   @Prop({ default: '' }) label!: string
   @Prop({ default: '' }) defaultText!: string
   @Prop({ default: 'text' }) type!: string
+  @Prop({ default: false }) disabled!: boolean
   data = ''
 
   @Watch('data')

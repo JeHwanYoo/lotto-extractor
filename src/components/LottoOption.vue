@@ -1,12 +1,14 @@
 <template>
   <v-sheet class="pa-2" elevation="3">
     <lotto-option-text-field
-      label="포함할 숫자 [1-45] (,)로 구분"
+      label="포함할 숫자 [1-45] (,)로 구분 (6개까지 인식합니다.)"
       @change="include => splitString(changeInclude, include)"
+      :disabled="unique"
     />
     <lotto-option-text-field
-      label="제외할 숫자 [1-45] (,)로 구분"
+      label="제외할 숫자 [1-45] (,)로 구분 (39개까지 인식합니다.)"
       @change="exclude => splitString(changeExclude, exclude)"
+      :disabled="unique"
     />
     <v-container>
       <v-row>
@@ -15,9 +17,9 @@
         </v-col>
         <v-col cols="6">
           <plus-minus-field
-            :value="5"
+            :value="unique ? 7 : 5"
             :min="1"
-            :max="100"
+            :max="unique ? 7 : 100"
             @input="filterCount"
           />
         </v-col>
@@ -25,7 +27,7 @@
       <v-row>
         <v-col class="pa-0 px-2">
           <v-switch
-            label="모든 숫자를 다르게 찍기"
+            label="모든 숫자를 다르게 찍기 (최대 7장 구매 가능)"
             v-model="unique"
             hide-details
           ></v-switch>
@@ -42,7 +44,7 @@
       </v-row>
       <v-row>
         <v-col class="text-left">
-          <span class="text-caption">
+          <span class="text-caption lime accent-2">
             ※ 로또는 독립 시행 게임이므로 이전 결과가 다음 결과에 영향을 미치지
             않습니다.
           </span>
@@ -96,6 +98,7 @@ export default class LottoOption extends Vue {
   @Watch('unique')
   watchUnique(newValue: boolean): void {
     this.changeUnique(newValue)
+    this.changeCount(this.unique ? 7 : 5)
   }
 
   @Watch('history')
