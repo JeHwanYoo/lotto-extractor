@@ -17,5 +17,9 @@ import AppFooter from '@/components/AppFooter.vue'
 @Component({
   components: { Lotto, AppFooter },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  metaInfo = {
+    title: '행운의 로또 추첨기',
+  }
+}
 </script>
