@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "행운의 로또번호 추출기",
+  "short_name": "로또번호 추출기",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#eeff41",
   "background_color": "#ffffff",
   "display": "standalone"
 }
