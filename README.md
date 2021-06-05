@@ -29,3 +29,7 @@ npm run build
 ```
 npm run lint
 ```
+
+## ScreenShot
+
+![screenshot](https://github.com/JeHwanYoo/lotto-extractor/blob/main/screenshot.PNG)
