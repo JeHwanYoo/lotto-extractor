@@ -8,6 +8,10 @@ module.exports = {
       args[0].imageURL =
         'https://jehwanyoo.net/lotto/android-chrome-192x192.png'
       args[0].siteURL = 'https://jehwanyoo.net/lotto/'
+      args[0].manifestURL =
+        process.env.NODE_ENV === 'production'
+          ? 'site.webmanifest'
+          : 'site.dev.webmanifest'
       return args
     })
   },
