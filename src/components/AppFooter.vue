@@ -1,8 +1,8 @@
 <template>
-  <div>
-    copyright (c) 2021
+  <div class="text-caption">
+    <span>copyright (c) 2021</span>
     <v-btn
-      class="footer-link pa-0"
+      class="footer-link pa-2"
       link
       target="_blank"
       href="https://jehwanyoo.net/"
@@ -19,14 +19,20 @@
     >
       <v-icon>mdi-github</v-icon>
     </v-btn>
+    <span>{{ version }}</span>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import PACKAGE from '../../package.json'
 
 @Component({})
-export default class AppFooter extends Vue {}
+export default class AppFooter extends Vue {
+  get version(): string {
+    return PACKAGE.version
+  }
+}
 </script>
 
 <style lang="scss" scoped>

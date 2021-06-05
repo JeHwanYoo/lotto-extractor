@@ -17,6 +17,11 @@
         <lotto-extractor />
       </v-col>
     </v-row>
+    <v-row>
+      <v-col offset-md="3" md="6">
+        <donation />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -26,9 +31,10 @@ import { LottoData } from '@/store'
 import { Getter } from 'vuex-class'
 import LottoOption from '@/components/LottoOption.vue'
 import LottoExtractor from '@/components/LottoExtractor.vue'
+import Donation from '@/components/Donation.vue'
 
 @Component({
-  components: { LottoOption, LottoExtractor },
+  components: { LottoOption, LottoExtractor, Donation },
 })
 export default class Lotto extends Vue {
   @Getter('lottos') lottos!: LottoData[]
