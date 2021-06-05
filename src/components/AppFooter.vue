@@ -11,6 +11,7 @@
     >
       Jehwan Yoo
     </v-btn>
+    <span>Please report bugs here. →</span>
     <v-btn
       icon
       link
